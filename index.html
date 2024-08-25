@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Games</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-900 text-white">
+    <header class="flex justify-between items-center p-5 bg-gray-800">
+      <img src="your-logo.png" alt="Studio Logo" class="h-12" />
+      <nav class="flex space-x-6">
+        <a href="privacy-policy.html" class="hover:text-gray-400"
+          >Privacy Policy</a
+        >
+        <a href="terms-conditions.html" class="hover:text-gray-400"
+          >Terms & Conditions</a
+        >
+      </nav>
+    </header>
+
+    <div class="container mx-auto px-5 py-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Game 1 -->
+        <div
+          class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300"
+        >
+          <img
+            src="your-game-image-1.jpg"
+            alt="Game 1"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-5 text-center">
+            <h2 class="text-xl font-semibold mb-4">Game Title 1</h2>
+            <div class="flex justify-center space-x-4">
+              <a
+                href="https://poki.com/game-url-1"
+                target="_blank"
+                class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-full transition-all duration-300"
+              >
+                Play on Poki
+              </a>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.yourgame"
+                target="_blank"
+                class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded-full transition-all duration-300"
+              >
+                Google Play
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Game 2 -->
+        <div
+          class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300"
+        >
+          <img
+            src="your-game-image-2.jpg"
+            alt="Game 2"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-5 text-center">
+            <h2 class="text-xl font-semibold mb-4">Game Title 2</h2>
+            <div class="flex justify-center space-x-4">
+              <a
+                href="https://poki.com/game-url-2"
+                target="_blank"
+                class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-full transition-all duration-300"
+              >
+                Play on Poki
+              </a>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.yourgame"
+                target="_blank"
+                class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded-full transition-all duration-300"
+              >
+                Google Play
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add more games as needed -->
+      </div>
+    </div>
+
+    <footer class="text-center py-6 bg-gray-800 mt-10">
+      &copy; 2024 Your Studio Name. All rights reserved.
+    </footer>
+  </body>
+</html>
