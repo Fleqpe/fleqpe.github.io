@@ -28,6 +28,9 @@
         border-radius: 8px;
         text-decoration: none;
         transition: transform 0.2s ease-in-out;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow */
+        flex-shrink: 0; /* Prevents the button from shrinking too much */
+        max-width: 100%; /* Ensures the button doesn't overflow */
       }
       .discord-button:hover {
         transform: scale(1.05);
@@ -85,14 +88,18 @@
     </style>
   </head>
   <body>
-    <header class="flex justify-between items-center p-5 bg-gray-800">
+    <header
+      class="flex flex-wrap justify-center md:justify-between items-center p-5 bg-gray-800"
+    >
       <a href="index.html">
-        <img src="images/studio-logo.png" alt="Studio Logo" class="h-12"
-      /></a>
-      <nav class="flex space-x-6 items-center">
-        <a href="index.html" class="hover:text-gray-400">Home</a>
+        <img src="images/studio-logo.png" alt="Studio Logo" class="h-12" />
+      </a>
+      <nav
+        class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6 items-center"
+        id="nav-menu"
+      >
         <a
-          href="https://discord.gg/rGKkh5fhBH"
+          href="https://discord.gg/your-server-invite"
           target="_blank"
           class="discord-button"
         >
@@ -105,15 +112,11 @@
         </a>
         <div class="dropdown">
           <a class="dropdown-trigger hover:text-gray-400">Privacy Policies</a>
-          <div class="dropdown-menu" id="privacy-dropdown">
-            <!-- Privacy Policy Links will be dynamically generated here -->
-          </div>
+          <div class="dropdown-menu" id="privacy-dropdown"></div>
         </div>
         <div class="dropdown">
           <a class="dropdown-trigger hover:text-gray-400">Terms & Conditions</a>
-          <div class="dropdown-menu" id="terms-dropdown">
-            <!-- Terms & Conditions Links will be dynamically generated here -->
-          </div>
+          <div class="dropdown-menu" id="terms-dropdown"></div>
         </div>
       </nav>
     </header>

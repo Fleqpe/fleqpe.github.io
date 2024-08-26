@@ -82,6 +82,8 @@
         text-decoration: none;
         transition: transform 0.2s ease-in-out;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow */
+        flex-shrink: 0; /* Prevents the button from shrinking too much */
+        max-width: 100%; /* Ensures the button doesn't overflow */
       }
       .discord-button:hover {
         transform: scale(1.05); /* Slightly enlarge on hover */
@@ -94,13 +96,16 @@
     </style>
   </head>
   <body class="bg-gray-900 text-white">
-    <header class="flex justify-between items-center p-5 bg-gray-800">
-      <a href="index.html">
-        <img src="images/studio-logo.png" alt="Studio Logo" class="h-12"
-      /></a>
-      <nav class="flex space-x-6 items-center" id="nav-menu">
+    <header
+      class="flex flex-wrap justify-center md:justify-between items-center p-5 bg-gray-800"
+    >
+      <img src="images/studio-logo.png" alt="Studio Logo" class="h-12" />
+      <nav
+        class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6 items-center"
+        id="nav-menu"
+      >
         <a
-          href="https://discord.gg/rGKkh5fhBH"
+          href="https://discord.gg/your-server-invite"
           target="_blank"
           class="discord-button"
         >
@@ -112,11 +117,15 @@
           Join Discord
         </a>
         <div class="dropdown">
-          <a class="dropdown-trigger hover:text-gray-400">Privacy Policies</a>
+          <a  class="dropdown-trigger hover:text-gray-400"
+            >Privacy Policies</a
+          >
           <div class="dropdown-menu" id="privacy-dropdown"></div>
         </div>
         <div class="dropdown">
-          <a class="dropdown-trigger hover:text-gray-400">Terms & Conditions</a>
+          <a  class="dropdown-trigger hover:text-gray-400"
+            >Terms & Conditions</a
+          >
           <div class="dropdown-menu" id="terms-dropdown"></div>
         </div>
       </nav>
