@@ -3,95 +3,177 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Terms and Conditions</title>
+    <title>Terms & Conditions</title>
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: #1a202c; /* Dark background */
+        color: #edf2f7; /* Light text color */
+      }
+      .container {
+        flex: 1;
+      }
+      .discord-button {
+        display: flex;
+        align-items: center;
+        background-color: #5865f2; /* Discord blue color */
+        color: white;
+        padding: 8px 12px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: transform 0.2s ease-in-out;
+      }
+      .discord-button:hover {
+        transform: scale(1.05);
+      }
+      .discord-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+      }
+      .dropdown {
+        position: relative;
+      }
+      .dropdown:hover .dropdown-menu,
+      .dropdown-menu:hover {
+        display: block;
+      }
+      .dropdown-trigger {
+        padding: 10px 15px;
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #2d3748;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 0.5rem;
+        border-radius: 0.375rem;
+        z-index: 1000;
+        min-width: 200px;
+      }
+      .dropdown-menu a {
+        display: block;
+        padding: 10px 15px;
+        color: white;
+        text-decoration: none;
+        transition: background-color 0.2s ease-in-out;
+      }
+      .dropdown-menu a:hover {
+        background-color: #4a5568;
+      }
+      .content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      footer {
+        background-color: #2d3748;
+        color: #a0aec0;
+      }
+    </style>
   </head>
-  <body class="bg-gray-900 text-white">
+  <body>
     <header class="flex justify-between items-center p-5 bg-gray-800">
-      <img src="your-logo.png" alt="Studio Logo" class="h-12" />
-      <nav class="flex space-x-6">
+      <a href="index.html">
+        <img src="images/studio-logo.png" alt="Studio Logo" class="h-12"
+      /></a>
+      <nav class="flex space-x-6 items-center">
         <a href="index.html" class="hover:text-gray-400">Home</a>
-        <a href="privacy-policy.html" class="hover:text-gray-400"
-          >Privacy Policy</a
+        <a
+          href="https://discord.gg/rGKkh5fhBH"
+          target="_blank"
+          class="discord-button"
         >
+          <img
+            src="images/discord-icon.png"
+            alt="Discord Logo"
+            class="discord-icon"
+          />
+          Join Discord
+        </a>
+        <div class="dropdown">
+          <a class="dropdown-trigger hover:text-gray-400">Privacy Policies</a>
+          <div class="dropdown-menu" id="privacy-dropdown">
+            <!-- Privacy Policy Links will be dynamically generated here -->
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-trigger hover:text-gray-400">Terms & Conditions</a>
+          <div class="dropdown-menu" id="terms-dropdown">
+            <!-- Terms & Conditions Links will be dynamically generated here -->
+          </div>
+        </div>
       </nav>
     </header>
 
     <div class="container mx-auto px-5 py-10">
-      <h1 class="text-3xl font-semibold mb-6">Terms and Conditions</h1>
-      <p class="mb-4">
-        Welcome to [Your Studio Name]! These terms and conditions ("Terms")
-        govern your use of our games and services ("Services"). By accessing or
-        using our Services, you agree to be bound by these Terms. If you do not
-        agree with these Terms, please do not use our Services.
-      </p>
-
-      <h2 class="text-2xl font-semibold mb-4">1. Use of Our Services</h2>
-      <p class="mb-4">
-        You agree to use our Services only for lawful purposes and in accordance
-        with these Terms. You are responsible for your conduct and any content
-        that you submit, post, or display on or through our Services.
-      </p>
-
-      <h2 class="text-2xl font-semibold mb-4">2. Intellectual Property</h2>
-      <p class="mb-4">
-        All content, features, and functionality of our Services, including but
-        not limited to text, graphics, logos, and images, are the exclusive
-        property of [Your Studio Name] and are protected by copyright,
-        trademark, and other intellectual property laws.
-      </p>
-
-      <h2 class="text-2xl font-semibold mb-4">3. User Content</h2>
-      <p class="mb-4">
-        By submitting any content to our Services, you grant us a worldwide,
-        non-exclusive, royalty-free license to use, reproduce, modify, and
-        display such content in connection with providing and promoting our
-        Services.
-      </p>
-
-      <h2 class="text-2xl font-semibold mb-4">4. Termination</h2>
-      <p class="mb-4">
-        We may terminate or suspend your access to our Services at any time,
-        without prior notice or liability, for any reason, including if you
-        breach these Terms.
-      </p>
-
-      <h2 class="text-2xl font-semibold mb-4">5. Disclaimer of Warranties</h2>
-      <p class="mb-4">
-        Our Services are provided "as is" and "as available" without any
-        warranties of any kind, either express or implied. We do not warrant
-        that the Services will be uninterrupted, error-free, or free from
-        viruses or other harmful components.
-      </p>
-
-      <h2 class="text-2xl font-semibold mb-4">6. Limitation of Liability</h2>
-      <p class="mb-4">
-        In no event shall [Your Studio Name], its directors, employees, or
-        affiliates be liable for any indirect, incidental, special, or
-        consequential damages arising out of or in connection with your use of
-        our Services.
-      </p>
-
-      <h2 class="text-2xl font-semibold mb-4">7. Changes to These Terms</h2>
-      <p class="mb-4">
-        We may update these Terms from time to time. If we make material
-        changes, we will notify you by posting the updated Terms on our website.
-        Your continued use of our Services following the posting of any changes
-        constitutes acceptance of those changes.
-      </p>
-
-      <h2 class="text-2xl font-semibold mb-4">8. Contact Us</h2>
-      <p class="mb-4">
-        If you have any questions about these Terms, please contact us at [Your
-        Email Address].
-      </p>
+      <div
+        class="content bg-gray-700 p-8 rounded-lg shadow-lg"
+        id="terms-content"
+      >
+        <!-- Terms & Conditions Content will be dynamically generated here -->
+      </div>
     </div>
 
-    <footer class="text-center py-6 bg-gray-800 mt-10">
-      &copy; 2024 Your Studio Name. All rights reserved.
+    <footer class="text-center py-6">
+      &copy; 2024 Fleqpe Games. All rights reserved.
     </footer>
+
+    <script src="games-data.js"></script>
+    <script>
+      // Function to generate dropdown menus and terms & conditions content
+      function generateTermsContent() {
+        const privacyDropdown = document.getElementById("privacy-dropdown");
+        const termsDropdown = document.getElementById("terms-dropdown");
+        const termsContent = document.getElementById("terms-content");
+
+        // Populate dropdowns with games data
+        games.forEach((game) => {
+          const privacyLink = document.createElement("a");
+          privacyLink.href = `privacy-policy.html?game=${encodeURIComponent(
+            game.title
+          )}`;
+          privacyLink.innerHTML = `${game.title}<br> Privacy Policy`;
+          privacyDropdown.appendChild(privacyLink);
+
+          const termsLink = document.createElement("a");
+          termsLink.href = `terms-conditions.html?game=${encodeURIComponent(
+            game.title
+          )}`;
+          termsLink.innerHTML = `${game.title}<br> Terms & Conditions`;
+          termsDropdown.appendChild(termsLink);
+        });
+
+        // Get game title from URL parameter
+        const params = new URLSearchParams(window.location.search);
+        const gameTitle = params.get("game");
+
+        console.log("URL parameter game:", gameTitle); // Debugging statement
+
+        const game = games.find((g) => g.title === gameTitle);
+
+        if (game) {
+          termsContent.innerHTML = `<strong>Terms &amp; Conditions</strong><br><p>These terms and conditions applies to the ${game.title} app (hereby referred to as "Application") for mobile devices that was created by Fleqpe Games (hereby referred to as "Service Provider") as an Ad Supported service.</p><br><p>Upon downloading or utilizing the Application, you are automatically agreeing to the following terms. It is strongly advised that you thoroughly read and understand these terms prior to using the Application. Unauthorized copying, modification of the Application, any part of the Application, or our trademarks is strictly prohibited. Any attempts to extract the source code of the Application, translate the Application into other languages, or create derivative versions are not permitted. All trademarks, copyrights, database rights, and other intellectual property rights related to the Application remain the property of the Service Provider.</p><br><p>The Service Provider is dedicated to ensuring that the Application is as beneficial and efficient as possible. As such, they reserve the right to modify the Application or charge for their services at any time and for any reason. The Service Provider assures you that any charges for the Application or its services will be clearly communicated to you.</p><br><p>The Application stores and processes personal data that you have provided to the Service Provider in order to provide the Service. It is your responsibility to maintain the security of your phone and access to the Application. The Service Provider strongly advise against jailbreaking or rooting your phone, which involves removing software restrictions and limitations imposed by the official operating system of your device. Such actions could expose your phone to malware, viruses, malicious programs, compromise your phone's security features, and may result in the Application not functioning correctly or at all.</p><div><p>Please note that the Application utilizes third-party services that have their own Terms and Conditions. Below are the links to the Terms and Conditions of the third-party service providers used by the Application:</p><ul><li><a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">Google Play Services</a></li><li><a href="https://developers.google.com/admob/terms" target="_blank" rel="noopener noreferrer">AdMob</a></li><!----><!----><!----><!----><!----><!----><!----><!----><!----><li><a href="https://unity3d.com/legal/terms-of-service" target="_blank" rel="noopener noreferrer">Unity</a></li><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></ul></div><br><p>Please be aware that the Service Provider does not assume responsibility for certain aspects. Some functions of the Application require an active internet connection, which can be Wi-Fi or provided by your mobile network provider. The Service Provider cannot be held responsible if the Application does not function at full capacity due to lack of access to Wi-Fi or if you have exhausted your data allowance.</p><br><p>If you are using the application outside of a Wi-Fi area, please be aware that your mobile network provider's agreement terms still apply. Consequently, you may incur charges from your mobile provider for data usage during the connection to the application, or other third-party charges. By using the application, you accept responsibility for any such charges, including roaming data charges if you use the application outside of your home territory (i.e., region or country) without disabling data roaming. If you are not the bill payer for the device on which you are using the application, they assume that you have obtained permission from the bill payer.</p><br><p>Similarly, the Service Provider cannot always assume responsibility for your usage of the application. For instance, it is your responsibility to ensure that your device remains charged. If your device runs out of battery and you are unable to access the Service, the Service Provider cannot be held responsible.</p><br><p>In terms of the Service Provider's responsibility for your use of the application, it is important to note that while they strive to ensure that it is updated and accurate at all times, they do rely on third parties to provide information to them so that they can make it available to you. The Service Provider accepts no liability for any loss, direct or indirect, that you experience as a result of relying entirely on this functionality of the application.</p><br><p>The Service Provider may wish to update the application at some point. The application is currently available as per the requirements for the operating system (and for any additional systems they decide to extend the availability of the application to) may change, and you will need to download the updates if you want to continue using the application. The Service Provider does not guarantee that it will always update the application so that it is relevant to you and/or compatible with the particular operating system version installed on your device. However, you agree to always accept updates to the application when offered to you. The Service Provider may also wish to cease providing the application and may terminate its use at any time without providing termination notice to you. Unless they inform you otherwise, upon any termination, (a) the rights and licenses granted to you in these terms will end; (b) you must cease using the application, and (if necessary) delete it from your device.</p><br><strong>Changes to These Terms and Conditions</strong><p>The Service Provider may periodically update their Terms and Conditions. Therefore, you are advised to review this page regularly for any changes. The Service Provider will notify you of any changes by posting the new Terms and Conditions on this page.</p><br><p>These terms and conditions are effective as of 2024-08-26</p><br><strong>Contact Us</strong><p>If you have any questions or suggestions about the Terms and Conditions, please do not hesitate to contact the Service Provider at fleqpegames@gmail.com.</p>`;
+        } else {
+          console.log("No matching game found for:", gameTitle); // Debugging statement
+          termsContent.innerHTML = `<p class="text-xl">No Terms & Conditions available for this game.</p>`;
+        }
+      }
+
+      // Generate the content when the page loads
+      window.onload = generateTermsContent;
+    </script>
   </body>
 </html>

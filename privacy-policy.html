@@ -8,92 +8,183 @@
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: #1a202c; /* Dark background */
+        color: #edf2f7; /* Light text color */
+      }
+      .container {
+        flex: 1;
+      }
+      .discord-button {
+        display: flex;
+        align-items: center;
+        background-color: #5865f2; /* Discord blue color */
+        color: white;
+        padding: 8px 12px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: transform 0.2s ease-in-out;
+      }
+      .discord-button:hover {
+        transform: scale(1.05);
+      }
+      .discord-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+      }
+      .dropdown {
+        position: relative;
+      }
+      .dropdown:hover .dropdown-menu,
+      .dropdown-menu:hover {
+        display: block;
+      }
+      .dropdown-trigger {
+        padding: 10px 15px;
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #2d3748;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 0.5rem;
+        border-radius: 0.375rem;
+        z-index: 1000;
+        min-width: 200px;
+      }
+      .dropdown-menu a {
+        display: block;
+        padding: 10px 15px;
+        color: white;
+        text-decoration: none;
+        transition: background-color 0.2s ease-in-out;
+      }
+      .dropdown-menu a:hover {
+        background-color: #4a5568;
+      }
+      .content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      footer {
+        background-color: #2d3748;
+        color: #a0aec0;
+      }
+    </style>
   </head>
-  <body class="bg-gray-900 text-white">
+  <body>
     <header class="flex justify-between items-center p-5 bg-gray-800">
-      <img src="your-logo.png" alt="Studio Logo" class="h-12" />
-      <nav class="flex space-x-6">
+      <a href="index.html">
+        <img src="images/studio-logo.png" alt="Studio Logo" class="h-12"
+      /></a>
+      <nav class="flex space-x-6 items-center">
         <a href="index.html" class="hover:text-gray-400">Home</a>
-        <a href="terms-conditions.html" class="hover:text-gray-400"
-          >Terms & Conditions</a
+        <a
+          href="https://discord.gg/rGKkh5fhBH"
+          target="_blank"
+          class="discord-button"
         >
+          <img
+            src="images/discord-icon.png"
+            alt="Discord Logo"
+            class="discord-icon"
+          />
+          Join Discord
+        </a>
+        <div class="dropdown">
+          <a class="dropdown-trigger hover:text-gray-400">Privacy Policies</a>
+          <div class="dropdown-menu" id="privacy-dropdown">
+            <!-- Privacy Policy Links will be dynamically generated here -->
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-trigger hover:text-gray-400">Terms & Conditions</a>
+          <div class="dropdown-menu" id="terms-dropdown">
+            <!-- Terms & Conditions Links will be dynamically generated here -->
+          </div>
+        </div>
       </nav>
     </header>
 
     <div class="container mx-auto px-5 py-10">
-      <h1 class="text-3xl font-semibold mb-6">Privacy Policy</h1>
-      <p class="mb-4">
-        Welcome to [Your Studio Name]! This privacy policy ("Policy") describes
-        how we collect, use, and share your personal information when you use
-        our games and services ("Services"). By using our Services, you agree to
-        the collection and use of information in accordance with this Policy.
-      </p>
-
-      <h2 class="text-2xl font-semibold mb-4">1. Information We Collect</h2>
-      <p class="mb-4">We may collect the following types of information:</p>
-      <ul class="list-disc list-inside mb-4">
-        <li>
-          Personal Information: Such as your name, email address, and other
-          contact details when you register or interact with our Services.
-        </li>
-        <li>
-          Usage Data: Information on how you access and use our Services,
-          including your IP address, browser type, and pages visited.
-        </li>
-        <li>
-          Device Information: Information about the device you use to access our
-          Services, including its type, operating system, and unique device
-          identifiers.
-        </li>
-      </ul>
-
-      <h2 class="text-2xl font-semibold mb-4">
-        2. How We Use Your Information
-      </h2>
-      <p class="mb-4">We use the information we collect to:</p>
-      <ul class="list-disc list-inside mb-4">
-        <li>Provide and maintain our Services.</li>
-        <li>Improve, personalize, and expand our Services.</li>
-        <li>
-          Communicate with you, including sending updates, newsletters, and
-          other information related to our Services.
-        </li>
-        <li>Monitor and analyze usage patterns and trends.</li>
-      </ul>
-
-      <h2 class="text-2xl font-semibold mb-4">3. Sharing Your Information</h2>
-      <p class="mb-4">
-        We do not sell, trade, or rent your personal information to others.
-        However, we may share your information with third-party service
-        providers who assist us in operating our Services, conducting our
-        business, or servicing you, so long as those parties agree to keep this
-        information confidential.
-      </p>
-
-      <h2 class="text-2xl font-semibold mb-4">4. Security</h2>
-      <p class="mb-4">
-        We take reasonable measures to protect your information from
-        unauthorized access, alteration, disclosure, or destruction. However,
-        please be aware that no method of transmission over the internet or
-        method of electronic storage is 100% secure.
-      </p>
-
-      <h2 class="text-2xl font-semibold mb-4">5. Changes to This Policy</h2>
-      <p class="mb-4">
-        We may update this Policy from time to time. We will notify you of any
-        changes by posting the new Policy on this page. You are advised to
-        review this Policy periodically for any changes.
-      </p>
-
-      <h2 class="text-2xl font-semibold mb-4">6. Contact Us</h2>
-      <p class="mb-4">
-        If you have any questions about this Privacy Policy, please contact us
-        at [Your Email Address].
-      </p>
+      <div
+        class="content bg-gray-700 p-8 rounded-lg shadow-lg"
+        id="privacy-content"
+      >
+        <!-- Privacy Policy Content will be dynamically generated here -->
+      </div>
     </div>
 
-    <footer class="text-center py-6 bg-gray-800 mt-10">
-      &copy; 2024 Your Studio Name. All rights reserved.
+    <footer class="text-center py-6">
+      &copy; 2024 Fleqpe Games. All rights reserved.
     </footer>
+
+    <script src="games-data.js"></script>
+    <script>
+      // Function to generate dropdown menus and privacy policy content
+      function generatePrivacyPolicyContent() {
+        const privacyDropdown = document.getElementById("privacy-dropdown");
+        const termsDropdown = document.getElementById("terms-dropdown");
+        const privacyContent = document.getElementById("privacy-content");
+
+        // Populate dropdowns with games data
+        games.forEach((game) => {
+          // Create privacy policy link with the game parameter
+          const privacyLink = document.createElement("a");
+          privacyLink.href = `privacy-policy.html?game=${encodeURIComponent(
+            game.title
+          )}`;
+          privacyLink.innerHTML = `${game.title}<br>Privacy Policy`;
+          privacyDropdown.appendChild(privacyLink);
+
+          // Create terms & conditions link with the game parameter
+          const termsLink = document.createElement("a");
+          termsLink.href = `terms-conditions.html?game=${encodeURIComponent(
+            game.title
+          )}`;
+          termsLink.innerHTML = `${game.title}<br> Terms & Conditions`;
+          termsDropdown.appendChild(termsLink);
+        });
+
+        // Get game title from URL parameter
+        const params = new URLSearchParams(window.location.search);
+        const gameTitle = params.get("game");
+
+        console.log("URL parameter game:", gameTitle); // Debugging statement
+
+        const game = games.find((g) => g.title === gameTitle);
+
+        if (game) {
+          privacyContent.innerHTML = `
+    <strong>Privacy Policy</strong><p>This privacy policy is applicable to the ${game.title} app (hereinafter referred to as "Application") for mobile devices, which was developed by Fleqpe Games (hereinafter referred to as "Service Provider") as an Ad Supported service. This service is provided "AS IS".</p><br><strong>What information does the Application obtain and how is it used?</strong><br><br><strong>User Provided Information</strong><p>The Application acquires the information you supply when you download and register the Application. Registration with the Service Provider is not mandatory. However, bear in mind that you might not be able to utilize some of the features offered by the Application unless you register with them.</p><p>The Service Provider may also use the information you provided them to contact you from time to time to provide you with important information, required notices and marketing promotions.</p><br><strong>Automatically Collected Information </strong><p>In addition, the Application may collect certain information automatically, including, but not limited to, the type of mobile device you use, your mobile devices unique device ID, the IP address of your mobile device, your mobile operating system, the type of mobile Internet browsers you use, and information about the way you use the Application.</p><br><strong>Does the Application collect precise real time location information of the device?</strong><p>This Application does not gather precise information about the location of your mobile device.</p><div style="display: none;"><p>This Application collects your device's location, which helps the Service Provider determine your approximate geographical location and make use of in below ways:</p><ul><li>Geolocation Services: The Service Provider utilizes location data to provide features such as personalized content, relevant recommendations, and location-based services.</li><li>Analytics and Improvements: Aggregated and anonymized location data helps the Service Provider to analyze user behavior, identify trends, and improve the overall performance and functionality of the Application.</li><li>Third-Party Services: Periodically, the Service Provider may transmit anonymized location data to external services. These services assist them in enhancing the Application and optimizing their offerings.</li></ul></div><br><strong>Do third parties see and/or have access to information obtained by the Application?</strong><p>Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider in improving the Application and their service. The Service Provider may share your information with third parties in the ways that are described in this privacy statement.</p><div><br><p>Please note that the Application utilizes third-party services that have their own Privacy Policy about handling data. Below are the links to the Privacy Policy of the third-party service providers used by the Application:</p><ul><li><a href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener noreferrer">Google Play Services</a></li><li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank" rel="noopener noreferrer">AdMob</a></li><!----><!----><!----><!----><!----><!----><!----><!----><!----><li><a href="https://unity3d.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Unity</a></li><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></ul></div><br><p>The Service Provider may disclose User Provided and Automatically Collected Information:</p><ul><li>as required by law, such as to comply with a subpoena, or similar legal process;</li><li>when they believe in good faith that disclosure is necessary to protect their rights, protect your safety or the safety of others, investigate fraud, or respond to a government request;</li><li>with their trusted services providers who work on their behalf, do not have an independent use of the information we disclose to them, and have agreed to adhere to the rules set forth in this privacy statement.</li></ul><p></p><br><strong>What are my opt-out rights?</strong><p>You can halt all collection of information by the Application easily by uninstalling the Application. You may use the standard uninstall processes as may be available as part of your mobile device or via the mobile application marketplace or network.</p><br><strong>Data Retention Policy, Managing Your Information</strong><p>The Service Provider will retain User Provided data for as long as you use the Application and for a reasonable time thereafter. The Service Provider will retain Automatically Collected information for up to 24 months and thereafter may store it in aggregate. If you'd like the Service Provider to delete User Provided Data that you have provided via the Application, please contact them at fleqpegames@gmail.com and we will respond in a reasonable time. Please note that some or all of the User Provided Data may be required in order for the Application to function properly.</p><br><strong>Children</strong><p>The Service Provider does not use the Application to knowingly solicit data from or market to children under the age of 13.</p><div><br><p>The Application does not address anyone under the age of 13.
+The Service Provider does not knowingly collect personally
+identifiable information from children under 13 years of age. In the case
+the Service Provider discover that a child under 13 has provided
+personal information, the Service Provider will immediately
+delete this from their servers. If you are a parent or guardian
+and you are aware that your child has provided us with
+personal information, please contact the Service Provider (fleqpegames@gmail.com) so that
+they will be able to take the necessary actions.</p></div><!----><br><strong>Security</strong><p>The Service Provider are concerned about safeguarding the confidentiality of your information. The Service Provider provide physical, electronic, and procedural safeguards to protect information we process and maintain. For example, we limit access to this information to authorized employees and contractors who need to know that information in order to operate, develop or improve their Application. Please be aware that, although we endeavor provide reasonable security for information we process and maintain, no security system can prevent all potential security breaches.</p><br><strong>Changes</strong><p>This Privacy Policy may be updated from time to time for any reason. The Service Provider will notify you of any changes to the Privacy Policy by updating this page with the new Privacy Policy. You are advised to consult this Privacy Policy regularly for any changes, as continued use is deemed approval of all changes.</p><br><p>This privacy policy is effective as of 2024-08-26</p><br><strong>Your Consent</strong><p>By using the Application, you are giving your consent to the Service Provider processing of your information as set forth in this Privacy Policy now and as amended by us. "Processing,” means using cookies on a computer/hand held device or using or touching information in any way, including, but not limited to, collecting, storing, deleting, using, combining and disclosing information.</p><br><strong>Contact us</strong><p>If you have any questions regarding privacy while using the Application, or have questions about the practices, please contact the Service Provider via email at fleqpegames@gmail.com.</p>`;
+        } else {
+          console.log("No matching game found for:", gameTitle); // Debugging statement
+          privacyContent.innerHTML = `<p class="text-xl">No Privacy Policy available for this game.</p>`;
+        }
+      }
+
+      // Generate the content when the page loads
+      window.onload = generatePrivacyPolicyContent;
+    </script>
   </body>
 </html>
