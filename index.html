@@ -117,15 +117,11 @@
           Join Discord
         </a>
         <div class="dropdown">
-          <a  class="dropdown-trigger hover:text-gray-400"
-            >Privacy Policies</a
-          >
+          <a class="dropdown-trigger hover:text-gray-400">Privacy Policies</a>
           <div class="dropdown-menu" id="privacy-dropdown"></div>
         </div>
         <div class="dropdown">
-          <a  class="dropdown-trigger hover:text-gray-400"
-            >Terms & Conditions</a
-          >
+          <a class="dropdown-trigger hover:text-gray-400">Terms & Conditions</a>
           <div class="dropdown-menu" id="terms-dropdown"></div>
         </div>
       </nav>
@@ -157,14 +153,14 @@
           privacyLink.href = `privacy-policy.html?game=${encodeURIComponent(
             game.title
           )}`;
-          privacyLink.innerHTML = `${game.title}<br> Privacy Policy`;
+          privacyLink.innerHTML = `${game.title}`;
           document.getElementById("privacy-dropdown").appendChild(privacyLink);
 
           const termsLink = document.createElement("a");
           termsLink.href = `terms-conditions.html?game=${encodeURIComponent(
             game.title
           )}`;
-          termsLink.innerHTML = `${game.title}<br> Terms & Conditions`;
+          termsLink.innerHTML = `${game.title}`;
           document.getElementById("terms-dropdown").appendChild(termsLink);
         });
 

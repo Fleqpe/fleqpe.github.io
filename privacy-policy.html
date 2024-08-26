@@ -149,7 +149,7 @@
           privacyLink.href = `privacy-policy.html?game=${encodeURIComponent(
             game.title
           )}`;
-          privacyLink.innerHTML = `${game.title}<br>Privacy Policy`;
+          privacyLink.innerHTML = `${game.title}`;
           privacyDropdown.appendChild(privacyLink);
 
           // Create terms & conditions link with the game parameter
@@ -157,7 +157,7 @@
           termsLink.href = `terms-conditions.html?game=${encodeURIComponent(
             game.title
           )}`;
-          termsLink.innerHTML = `${game.title}<br> Terms & Conditions`;
+          termsLink.innerHTML = `${game.title}`;
           termsDropdown.appendChild(termsLink);
         });
 
