@@ -33,7 +33,7 @@ const games = [
       "Slicer Cursor is a unique idle game where your cursor becomes a slicing machine. Slice enemies to level up and boost your slicing power. Enjoy the blend of action and strategy as you upgrade your cursor for maximum impact in this casual, incremental game!",
     pokiUrl: "",
     googlePlayUrl: "",
-    crazyGamesUrl: "https://www.crazygames.com/game/time-to-mine---idle-tycoon",
+    crazyGamesUrl: "https://www.crazygames.com/game/slicer-cursor-idle",
   },
   {
     title: "Fantasy Idle Tycoon ",
