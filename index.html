@@ -56,7 +56,7 @@
       }
       .platform-icon-container {
         background-color: #8dabd1; /* Lighter color than before */
-        width: 100px; /* Slightly smaller width */
+        width: 75px; /* Slightly smaller width */
         height: 50px; /* Slightly smaller height */
         display: flex;
         align-items: center;
@@ -173,39 +173,47 @@
           let buttons = "";
           if (game.pokiUrl) {
             buttons += `
-                        <a href="${game.pokiUrl}" target="_blank">
-                            <div class="platform-icon-container">
-                                <img src="images/poki-icon.png" alt="Play on Poki" class="platform-icon">
-                            </div>
-                        </a>`;
+                      <a href="${game.pokiUrl}" target="_blank">
+                          <div class="platform-icon-container">
+                              <img src="images/poki-icon.png" alt="Play on Poki" class="platform-icon">
+                          </div>
+                      </a>`;
           }
           if (game.googlePlayUrl) {
             buttons += `
-                        <a href="${game.googlePlayUrl}" target="_blank">
-                            <div class="platform-icon-container">
-                                <img src="images/google-play-icon.png" alt="Google Play" class="platform-icon">
-                            </div>
-                        </a>`;
+                      <a href="${game.googlePlayUrl}" target="_blank">
+                          <div class="platform-icon-container">
+                              <img src="images/google-play-icon.png" alt="Google Play" class="platform-icon">
+                          </div>
+                      </a>`;
           }
           if (game.crazyGamesUrl) {
             buttons += `
-                        <a href="${game.crazyGamesUrl}" target="_blank">
-                            <div class="platform-icon-container">
-                                <img src="images/crazy-games-icon.png" alt="Play on CrazyGames" class="platform-icon">
-                            </div>
-                        </a>`;
+                      <a href="${game.crazyGamesUrl}" target="_blank">
+                          <div class="platform-icon-container">
+                              <img src="images/crazy-games-icon.png" alt="Play on CrazyGames" class="platform-icon">
+                          </div>
+                      </a>`;
+          }
+          if (game.steamUrl) {
+            buttons += `
+                      <a href="${game.steamUrl}" target="_blank">
+                          <div class="platform-icon-container">
+                              <img src="images/steam-icon.png" alt="Play on Steam" class="platform-icon">
+                          </div>
+                      </a>`;
           }
 
           gameCard.innerHTML = `
-                    <img src="${game.imageUrl}" alt="${game.title}" class="w-full h-48 object-cover" />
-                    <div class="p-5 text-center">
-                        <h2 class="text-xl font-semibold mb-2">${game.title}</h2>
-                        <p class="text-sm text-gray-400 mb-4">${game.description}</p> <!-- Game Description -->
-                        <div class="flex justify-center space-x-4">
-                            ${buttons}
-                        </div>
-                    </div>
-                `;
+                  <img src="${game.imageUrl}" alt="${game.title}" class="w-full h-48 object-cover" />
+                  <div class="p-5 text-center">
+                      <h2 class="text-xl font-semibold mb-2">${game.title}</h2>
+                      <p class="text-sm text-gray-400 mb-4">${game.description}</p> <!-- Game Description -->
+                      <div class="flex justify-center space-x-4">
+                          ${buttons}
+                      </div>
+                  </div>
+              `;
 
           gameGrid.appendChild(gameCard);
         });

@@ -7,6 +7,7 @@ const games = [
     pokiUrl: "https://poki.com/tr/g/fantasy-idle-tycoon-2",
     googlePlayUrl: "",
     crazyGamesUrl: "",
+    steamUrl: "",
   },
   {
     title: "Crafters Inc: Tycoon Empire",
@@ -16,6 +17,7 @@ const games = [
     pokiUrl: "https://poki.com/tr/g/crafters-inc-tycoon-empire",
     googlePlayUrl: "",
     crazyGamesUrl: "https://www.crazygames.com/game/crafters-inc-tycoon-empire",
+    steamUrl: "",
   },
   {
     title: "Miner Madness Tycoon",
@@ -25,6 +27,7 @@ const games = [
     pokiUrl: "",
     googlePlayUrl: "",
     crazyGamesUrl: "https://www.crazygames.com/game/time-to-mine---idle-tycoon",
+    steamUrl: "",
   },
   {
     title: "Slicer Cursor Idle",
@@ -34,6 +37,7 @@ const games = [
     pokiUrl: "",
     googlePlayUrl: "",
     crazyGamesUrl: "https://www.crazygames.com/game/slicer-cursor-idle",
+    steamUrl: "",
   },
   {
     title: "Fantasy Idle Tycoon ",
@@ -43,6 +47,7 @@ const games = [
     pokiUrl: "",
     googlePlayUrl: "",
     crazyGamesUrl: "https://www.crazygames.com/game/fantasy-idle-tycoon",
+    steamUrl: "",
   },
   {
     title: "Fishing Society",
@@ -52,6 +57,7 @@ const games = [
     pokiUrl: "",
     googlePlayUrl: "",
     crazyGamesUrl: "",
+    steamUrl: "",
   },
   {
     title: "Joe The Necromancer",
@@ -61,6 +67,7 @@ const games = [
     pokiUrl: "",
     googlePlayUrl: "",
     crazyGamesUrl: "",
+    steamUrl: "",
   },
   {
     title: "Antea: Crafting Simulator",
@@ -70,6 +77,7 @@ const games = [
     pokiUrl: "",
     googlePlayUrl: "",
     crazyGamesUrl: "",
+    steamUrl: "",
   },
   // Add more games as needed
 ];
