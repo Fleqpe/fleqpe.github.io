@@ -6,7 +6,7 @@ const games = [
       "Fantasy Idle Tycoon is an idle game where you must build yourself a blacksmith empire by managing your blacksmiths in this fantasy universe! Expand your empire by managing your investors.",
     pokiUrl: "https://poki.com/tr/g/fantasy-idle-tycoon-2",
     googlePlayUrl: "",
-    crazyGamesUrl: "",
+    crazyGamesUrl: "https://www.crazygames.com/game/fantasy-idle-tycoon-2",
     steamUrl: "",
   },
   {
