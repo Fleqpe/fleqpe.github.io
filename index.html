@@ -41,8 +41,6 @@
             generateContent(); // Ensure generateContent is still called
           });
       }
-
-      // Function to generate game cards
       function generateContent() {
         const gameGrid = document.getElementById("game-grid");
 
@@ -58,55 +56,37 @@
             "bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300";
 
           let buttons = "";
-          if (game.pokiUrl) {
-            buttons += `
-            <a href="${game.pokiUrl}" target="_blank">
+          game.urls.forEach((url) => {
+            if (url.link) {
+              // Check if the link is not empty
+              const iconSrc = platformIcons[url.type];
+              if (iconSrc) {
+                buttons += `
+            <a href="${url.link}" target="_blank">
                 <div class="platform-icon-container">
-                    <img src="images/poki-icon.png" alt="Play on Poki" class="platform-icon">
+                    <img src="${iconSrc}" alt="Play on ${
+                  url.type.charAt(0).toUpperCase() + url.type.slice(1)
+                }" class="platform-icon">
                 </div>
             </a>`;
-          }
-          if (game.googlePlayUrl) {
-            buttons += `
-            <a href="${game.googlePlayUrl}" target="_blank">
-                <div class="platform-icon-container">
-                    <img src="images/google-play-icon.png" alt="Google Play" class="platform-icon">
-                </div>
-            </a>`;
-          }
-          if (game.crazyGamesUrl) {
-            buttons += `
-            <a href="${game.crazyGamesUrl}" target="_blank">
-                <div class="platform-icon-container">
-                    <img src="images/crazy-games-icon.png" alt="Play on CrazyGames" class="platform-icon">
-                </div>
-            </a>`;
-          }
-          if (game.steamUrl) {
-            buttons += `
-            <a href="${game.steamUrl}" target="_blank">
-                <div class="platform-icon-container">
-                    <img src="images/steam-icon.png" alt="Play on Steam" class="platform-icon">
-                </div>
-            </a>`;
-          }
+              }
+            }
+          });
 
           gameCard.innerHTML = `
-            <img src="${game.imageUrl}" alt="${game.title}" class="w-full h-48 object-cover" />
-            <div class="p-5 text-center">
-                <h2 class="text-xl font-semibold mb-2">${game.title}</h2>
-                <p class="text-sm text-gray-400 mb-4">${game.description}</p>
-                <div class="flex justify-center space-x-4">
-                    ${buttons}
-                </div>
-            </div>
-        `;
+      <img src="${game.imageUrl}" alt="${game.title}" class="w-full h-48 object-cover" />
+      <div class="p-5 text-center">
+          <h2 class="text-xl font-semibold mb-2">${game.title}</h2>
+          <p class="text-sm text-gray-400 mb-4">${game.description}</p>
+          <div class="flex justify-center space-x-4">
+              ${buttons}
+          </div>
+      </div>
+    `;
 
           gameGrid.appendChild(gameCard);
         });
       }
-
-      // Load the header and generate content when the page loads
       window.onload = loadHeader;
     </script>
   </body>

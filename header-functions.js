@@ -23,7 +23,9 @@ function dropdownPopulate() {
   termsDropdown.innerHTML = "";
 
   // Check if there are Google Play games
-  const hasGooglePlayGame = games.some((game) => game.googlePlayUrl);
+  const hasGooglePlayGame = games.some((game) =>
+    game.urls.some((url) => url.type === "googlePlay" && url.link)
+  );
 
   if (!hasGooglePlayGame) {
     // Hide dropdown containers if no Google Play games
@@ -38,7 +40,11 @@ function dropdownPopulate() {
 
   // Populate dropdowns
   games.forEach((game) => {
-    if (game.googlePlayUrl == "") return;
+    const googlePlayUrl = game.urls.find(
+      (url) => url.type === "googlePlay"
+    )?.link;
+
+    if (!googlePlayUrl) return;
 
     const privacyLink = document.createElement("a");
     privacyLink.href = `privacy-policy.html?game=${encodeURIComponent(
