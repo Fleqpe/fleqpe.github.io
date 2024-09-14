@@ -149,6 +149,7 @@
 
         // Populate dropdown menus with games data
         games.forEach((game) => {
+          if (game.googlePlayUrl == "") return;
           const privacyLink = document.createElement("a");
           privacyLink.href = `privacy-policy.html?game=${encodeURIComponent(
             game.title

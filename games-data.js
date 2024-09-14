@@ -8,6 +8,7 @@ const games = [
     googlePlayUrl: "",
     crazyGamesUrl: "https://www.crazygames.com/game/fantasy-idle-tycoon-2",
     steamUrl: "",
+    isPaidApp: false,
   },
   {
     title: "Crafters Inc: Tycoon Empire",
@@ -18,6 +19,7 @@ const games = [
     googlePlayUrl: "",
     crazyGamesUrl: "https://www.crazygames.com/game/crafters-inc-tycoon-empire",
     steamUrl: "",
+    isPaidApp: false,
   },
   {
     title: "Miner Madness Tycoon",
@@ -28,6 +30,7 @@ const games = [
     googlePlayUrl: "",
     crazyGamesUrl: "https://www.crazygames.com/game/time-to-mine---idle-tycoon",
     steamUrl: "",
+    isPaidApp: false,
   },
   {
     title: "Slicer Cursor Idle",
@@ -38,6 +41,7 @@ const games = [
     googlePlayUrl: "",
     crazyGamesUrl: "https://www.crazygames.com/game/slicer-cursor-idle",
     steamUrl: "",
+    isPaidApp: false,
   },
   {
     title: "Fantasy Idle Tycoon ",
@@ -48,6 +52,7 @@ const games = [
     googlePlayUrl: "",
     crazyGamesUrl: "https://www.crazygames.com/game/fantasy-idle-tycoon",
     steamUrl: "",
+    isPaidApp: false,
   },
   {
     title: "Fishing Society",
@@ -58,6 +63,7 @@ const games = [
     googlePlayUrl: "",
     crazyGamesUrl: "",
     steamUrl: "",
+    isPaidApp: false,
   },
   {
     title: "Joe The Necromancer",
@@ -68,6 +74,7 @@ const games = [
     googlePlayUrl: "",
     crazyGamesUrl: "",
     steamUrl: "",
+    isPaidApp: false,
   },
   {
     title: "Antea: Crafting Simulator",
@@ -78,6 +85,7 @@ const games = [
     googlePlayUrl: "",
     crazyGamesUrl: "",
     steamUrl: "",
+    isPaidApp: false,
   },
   // Add more games as needed
 ];
