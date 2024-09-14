@@ -146,7 +146,18 @@
       function generateContent() {
         const navMenu = document.getElementById("nav-menu");
         const gameGrid = document.getElementById("game-grid");
+        // Check if there is at least one game with a googlePlayUrl
+        const hasGooglePlayGame = games.some(
+          (game) => game.googlePlayUrl !== ""
+        );
 
+        // Hide the "Privacy Policies" and "Terms & Conditions" buttons if no game has a googlePlayUrl
+        if (!hasGooglePlayGame) {
+          document.querySelector(".dropdown:nth-of-type(1)").style.display =
+            "none";
+          document.querySelector(".dropdown:nth-of-type(2)").style.display =
+            "none";
+        }
         // Populate dropdown menus with games data
         games.forEach((game) => {
           if (game.googlePlayUrl == "") return;

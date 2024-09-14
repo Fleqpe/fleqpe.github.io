@@ -141,7 +141,17 @@
         const privacyDropdown = document.getElementById("privacy-dropdown");
         const termsDropdown = document.getElementById("terms-dropdown");
         const termsContent = document.getElementById("terms-content");
+        const hasGooglePlayGame = games.some(
+          (game) => game.googlePlayUrl !== ""
+        );
 
+        // Hide the "Privacy Policies" and "Terms & Conditions" buttons if no game has a googlePlayUrl
+        if (!hasGooglePlayGame) {
+          document.querySelector(".dropdown:nth-of-type(1)").style.display =
+            "none";
+          document.querySelector(".dropdown:nth-of-type(2)").style.display =
+            "none";
+        }
         // Populate dropdowns with games data
         games.forEach((game) => {
           if (game.googlePlayUrl == "") return;
