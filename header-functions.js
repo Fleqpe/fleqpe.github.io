@@ -50,16 +50,44 @@ function dropdownPopulate() {
     privacyLink.href = `privacy-policy.html?game=${encodeURIComponent(
       game.title
     )}`;
-    privacyLink.innerHTML = `${game.title}`;
+    privacyLink.innerHTML = game.title;
     privacyDropdown.appendChild(privacyLink);
 
     const termsLink = document.createElement("a");
     termsLink.href = `terms-conditions.html?game=${encodeURIComponent(
       game.title
     )}`;
-    termsLink.innerHTML = `${game.title}`;
+    termsLink.innerHTML = game.title;
     termsDropdown.appendChild(termsLink);
   });
 
   console.log("Dropdowns populated.");
+}
+
+function setToggleButton() {
+  const themeToggleButton = document.getElementById("theme-toggle");
+
+  if (themeToggleButton) {
+    themeToggleButton.addEventListener("click", toggleTheme);
+  } else {
+    console.error("Theme toggle button not found.");
+  }
+  toggleTheme();
+}
+
+function toggleTheme() {
+  const body = document.body;
+  const themeIcon = document.getElementById("theme-icon");
+
+  if (body.classList.contains("dark-mode")) {
+    body.classList.remove("dark-mode");
+    body.classList.add("light-mode");
+    themeIcon.classList.remove("fa-moon"); // Remove moon icon
+    themeIcon.classList.add("fa-sun"); // Add sun icon
+  } else {
+    body.classList.remove("light-mode");
+    body.classList.add("dark-mode");
+    themeIcon.classList.remove("fa-sun"); // Remove sun icon
+    themeIcon.classList.add("fa-moon"); // Add moon icon
+  }
 }

@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fleqpe Games</title>
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
@@ -36,8 +40,8 @@
           .then((response) => response.text())
           .then((data) => {
             document.getElementById("header-placeholder").innerHTML = data;
-            // Call dropdownPopulate only after the header is loaded
             dropdownPopulate();
+            setToggleButton();
             generateContent(); // Ensure generateContent is still called
           });
       }
@@ -52,13 +56,11 @@
         // Generate game cards with descriptions
         games.forEach((game) => {
           const gameCard = document.createElement("div");
-          gameCard.className =
-            "bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300";
+          gameCard.className = "game-card"; // Use updated class name
 
           let buttons = "";
           game.urls.forEach((url) => {
             if (url.link) {
-              // Check if the link is not empty
               const iconSrc = platformIcons[url.type];
               if (iconSrc) {
                 buttons += `
@@ -76,11 +78,11 @@
           gameCard.innerHTML = `
       <img src="${game.imageUrl}" alt="${game.title}" class="w-full h-48 object-cover" />
       <div class="p-5 text-center">
-          <h2 class="text-xl font-semibold mb-2">${game.title}</h2>
-          <p class="text-sm text-gray-400 mb-4">${game.description}</p>
-          <div class="flex justify-center space-x-4">
-              ${buttons}
-          </div>
+        <h2 class="text-xl font-semibold mb-2">${game.title}</h2>
+        <p class="text-sm text-gray-400 mb-4">${game.description}</p>
+        <div class="flex justify-center space-x-4">
+          ${buttons}
+        </div>
       </div>
     `;
 
