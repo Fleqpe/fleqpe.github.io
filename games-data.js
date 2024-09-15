@@ -13,10 +13,6 @@ const games = [
     urls: [
       { type: "poki", link: "https://poki.com/tr/g/fantasy-idle-tycoon-2" },
       {
-        type: "googlePlay",
-        link: "https://play.google.com/store/apps/details?id=com.example.fantasyidlet2",
-      },
-      {
         type: "crazy",
         link: "https://www.crazygames.com/game/fantasy-idle-tycoon-2",
       },
