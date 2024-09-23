@@ -208,4 +208,70 @@ body.light-mode .game-card:hover {
 
 .game-card:hover img {
   transform: scale(1.1); /* Slightly zoom in on hover */
+} /* NEW Flair Style */
+/* NEW Flair Style with animation */
+.new-flair {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff595e; /* Bright red */
+  color: white;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(255, 89, 94, 0.4);
+  letter-spacing: 0.5px;
+  animation: pulse 2s infinite ease-in-out;
+  z-index: 10; /* Keep flair on top of all elements */
+  pointer-events: none; /* Prevent interaction with flair */
+}
+
+/* Keyframes for pulsing animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(255, 89, 94, 0.4);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgba(255, 89, 94, 0.7);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(255, 89, 94, 0.4);
+  }
+}
+
+/* UPDATED Flair Style with animation */
+.updated-flair {
+  position: absolute;
+  top: 50px;
+  right: 10px; /* Positioned to the top-left corner */
+  background-color: #00b4d8; /* Bright blue */
+  color: white;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0, 180, 216, 0.4);
+  letter-spacing: 0.5px;
+  animation: float 2s infinite ease-in-out;
+  z-index: 10; /* Keep flair on top of all elements */
+  pointer-events: none; /* Prevent interaction with flair */
+}
+
+/* Keyframes for floating animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 0 8px rgba(0, 180, 216, 0.4);
+  }
+  50% {
+    transform: translateY(-3px); /* Subtle floating effect */
+    box-shadow: 0 0 12px rgba(0, 180, 216, 0.7);
+  }
 }

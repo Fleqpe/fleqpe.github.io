@@ -74,8 +74,24 @@
               }
             }
           });
+          let flairs = "";
+          if (game.isNew) {
+            flairs += `
+          <div class="new-flair">
+            New
+          </div>
+        `;
+          }
+          if (game.isUpdated) {
+            flairs += `
+          <div class="updated-flair">
+            Updated
+          </div>
+        `;
+          }
 
           gameCard.innerHTML = `
+      ${flairs} <!-- Add the flairs dynamically -->
       <img src="${game.imageUrl}" alt="${game.title}" class="w-full h-48 object-cover" />
       <div class="p-5 text-center">
         <h2 class="text-xl font-semibold mb-2">${game.title}</h2>

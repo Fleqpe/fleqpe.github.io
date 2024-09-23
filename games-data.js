@@ -19,6 +19,8 @@ const games = [
       { type: "steam", link: "" },
     ],
     isPaidApp: false,
+    isNew: true,
+    isUpdated: true,
   },
   {
     title: "Crafters Inc: Tycoon Empire",
