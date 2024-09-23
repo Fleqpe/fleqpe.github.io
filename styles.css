@@ -223,13 +223,13 @@ body.light-mode .game-card:hover {
   border-radius: 12px;
   box-shadow: 0 0 8px rgba(255, 89, 94, 0.4);
   letter-spacing: 0.5px;
-  animation: pulse 2s infinite ease-in-out;
   z-index: 10; /* Keep flair on top of all elements */
   pointer-events: none; /* Prevent interaction with flair */
+  outline: 2px solid white; /* White outline, 2px wide */
 }
 
 /* Keyframes for pulsing animation */
-@keyframes pulse {
+@keyframes pulseNew {
   0% {
     transform: scale(1);
     box-shadow: 0 0 8px rgba(255, 89, 94, 0.4);
@@ -247,7 +247,7 @@ body.light-mode .game-card:hover {
 /* UPDATED Flair Style with animation */
 .updated-flair {
   position: absolute;
-  top: 50px;
+  top: 60px;
   right: 10px; /* Positioned to the top-left corner */
   background-color: #00b4d8; /* Bright blue */
   color: white;
@@ -258,20 +258,29 @@ body.light-mode .game-card:hover {
   border-radius: 12px;
   box-shadow: 0 0 8px rgba(0, 180, 216, 0.4);
   letter-spacing: 0.5px;
-  animation: float 2s infinite ease-in-out;
   z-index: 10; /* Keep flair on top of all elements */
   pointer-events: none; /* Prevent interaction with flair */
+  outline: 2px solid white; /* White outline, 2px wide */
 }
-
-/* Keyframes for floating animation */
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
+@keyframes pulseUpdated {
+  0% {
+    transform: scale(1);
     box-shadow: 0 0 8px rgba(0, 180, 216, 0.4);
   }
   50% {
-    transform: translateY(-3px); /* Subtle floating effect */
-    box-shadow: 0 0 12px rgba(0, 180, 216, 0.7);
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgba(0, 180, 216, 0.4);
   }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(0, 180, 216, 0.4);
+  }
+}
+
+.game-card:hover .updated-flair {
+  animation: pulseUpdated 2s infinite ease-in-out;
+}
+
+.game-card:hover .new-flair {
+  animation: pulseNew 2s infinite ease-in-out;
 }
