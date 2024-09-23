@@ -4,6 +4,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   transition: background-color 0.3s, color 0.3s;
+  image-rendering: crisp-edges;
 }
 
 .container {
@@ -44,8 +45,6 @@ body {
   text-decoration: none;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
-
-/* Platform Icon Styles */
 .platform-icon-container {
   background-color: #8dabd1;
   width: 75px;
@@ -56,16 +55,27 @@ body {
   border-radius: 8px;
   transition: transform 0.3s ease-in-out;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  will-change: transform; /* Optimization for container */
+  transform: translateZ(0); /* Enable GPU rendering */
 }
 
 .platform-icon-container:hover {
-  transform: scale(1.1); /* Slightly enlarge on hover */
+  transform: scale(1.05) translateZ(0); /* Prevent blurring */
+}
+
+.platform-icon-container span, /* For text inside */
+.platform-icon-container .platform-icon {
+  /* And icon */
+  will-change: transform; /* Optimize rendering for hover transforms */
+  transform: translateZ(0); /* Avoid blurring for text and icon */
+  backface-visibility: hidden;
 }
 
 .game-card .platform-icon {
   max-width: 80%;
   max-height: 80%;
   object-fit: contain;
+  image-rendering: crisp-edges;
 }
 
 /* Discord Button */
@@ -179,14 +189,6 @@ body.dark-mode .game-card {
   transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
   transform: perspective(1px) translateZ(0); /* Fix for 3D transform */
 }
-body.dark-mode .game-card:hover {
-  transform: translateY(-15px) scale(1.05) rotateZ(1deg); /* Scale, move up, and slightly rotate on hover */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
-}
-body.light-mode .game-card:hover {
-  transform: translateY(-15px) scale(1.05) rotateZ(1deg); /* Scale, move up, and slightly rotate on hover */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
-}
 
 .game-card h2 {
   font-size: 1.25rem;
@@ -283,4 +285,40 @@ body.light-mode .game-card:hover {
 
 .game-card:hover .new-flair {
   animation: pulseNew 2s infinite ease-in-out;
+} /* Game card styles without hover */
+body.dark-mode .game-card,
+body.light-mode .game-card {
+  transform: scale(1); /* Initial scale */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Initial subtle shadow */
+  opacity: 1; /* Full opacity */
+  transition: transform 0.7s ease, box-shadow 0.7s ease, opacity 0.7s ease; /* Smooth transitions */
+}
+
+/* Hover effect: Pulse glow and scale-up */
+body.dark-mode .game-card:hover,
+body.light-mode .game-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(29, 134, 165, 0.8); /* Intense glow on hover */
+}
+
+/* After hover ends (scale-down and fade-out animation) */
+body.dark-mode .game-card:not(:hover),
+body.light-mode .game-card:not(:hover) {
+  transform: scale(1); /* Back to original size */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  opacity: 1; /* Full opacity */
+  transition: transform 0.7s ease, box-shadow 0.7s ease, opacity 0.7s ease; /* Smooth transition on hover out */
+}
+
+/* Disable animations on page load */
+body.dark-mode .game-card,
+body.light-mode .game-card {
+  will-change: transform, box-shadow, opacity; /* Optimize for animation */
+  transition: none; /* Disable transitions initially */
+}
+
+/* Once the card is hovered, enable transitions */
+body.dark-mode .game-card:hover,
+body.light-mode .game-card:hover {
+  transition: transform 0.7s ease, box-shadow 0.7s ease, opacity 0.7s ease; /* Enable transitions only after hover */
 }
