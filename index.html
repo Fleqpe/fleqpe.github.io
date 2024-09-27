@@ -54,6 +54,7 @@
             generateContent(); // Ensure generateContent is still called
           });
       }
+
       function generateContent() {
         const gameGrid = document.getElementById("game-grid");
 
@@ -62,7 +63,6 @@
           return;
         }
 
-        // Generate game cards with descriptions and a megaphone button (only if the game has updates)
         games.forEach((game) => {
           const gameCard = document.createElement("div");
           gameCard.className = "game-card relative"; // Use updated class name
@@ -73,53 +73,47 @@
               const iconSrc = platformIcons[url.type];
               if (iconSrc) {
                 buttons += `
-            <a href="${url.link}" target="_blank">
-              <div class="platform-icon-container">
-                <img src="${iconSrc}" alt="Play on ${
-                  url.type.charAt(0).toUpperCase() + url.type.slice(1)
-                }" class="platform-icon">
-              </div>
-            </a>`;
+              <a href="${url.link}" target="_blank">
+                <div class="platform-icon-container">
+                  <img src="${iconSrc}" alt="Play on ${url.type}" class="platform-icon">
+                </div>
+              </a>`;
               }
             }
           });
 
           let flairs = "";
           if (game.isNew) {
-            flairs += `
-        <div class="new-flair">New</div>`;
+            flairs += `<div class="new-flair">New</div>`;
           }
           if (game.isUpdated) {
-            flairs += `
-        <div class="updated-flair">Updated</div>`;
+            flairs += `<div class="updated-flair">Updated</div>`;
           }
 
-          // Only display the megaphone button if the game has update notes
           let megaphoneButton = "";
           if (game.updateNotes && game.updateNotes.length > 0) {
             megaphoneButton = `
-        <button class="absolute top-2 left-2 p-2 bg-gray-700 rounded-full update-btn" data-game-id="${game.id}">
-          <i class="fas fa-bullhorn megaphone-icon"></i>
-        </button>`;
+              <button class="absolute top-2 left-2 p-2 bg-gray-700 rounded-full update-btn" data-game-id="${game.id}">
+                <i class="fas fa-bullhorn megaphone-icon"></i>
+              </button>`;
           }
 
           gameCard.innerHTML = `
-      ${flairs} <!-- Add the flairs dynamically -->
-      ${megaphoneButton} <!-- Conditionally add the megaphone button -->
-      <img src="${game.imageUrl}" alt="${game.title}" class="w-full h-48 object-cover" />
-      <div class="p-5 text-center">
-        <h2 class="text-4xl font-semibold mb-2">${game.title}</h2>
-        <p class="text-base text-gray-400 mb-4">${game.description}</p>
-        <div class="flex justify-center space-x-4">
-          ${buttons}
-        </div>
-      </div>
-    `;
+            ${flairs}
+            ${megaphoneButton}
+            <img src="${game.imageUrl}" alt="${game.title}" class="w-full h-48 object-cover" />
+            <div class="p-5 text-center">
+              <h2 class="text-4xl font-semibold mb-2">${game.title}</h2>
+              <p class="text-base text-gray-400 mb-4">${game.description}</p>
+              <div class="flex justify-center space-x-4">
+                ${buttons}
+              </div>
+            </div>
+          `;
 
           gameGrid.appendChild(gameCard);
         });
 
-        // Add click event listener to all update buttons (for games with updates)
         document.querySelectorAll(".update-btn").forEach((button) => {
           button.addEventListener("click", function () {
             const gameId = this.getAttribute("data-game-id");
@@ -127,6 +121,7 @@
           });
         });
       }
+
       function showUpdateModal(gameId) {
         const game = games.find((g) => g.id === gameId);
         if (!game || !game.updateNotes) {
@@ -134,23 +129,21 @@
           return;
         }
 
-        // Sort update notes based on their date
         game.updateNotes.sort((a, b) => new Date(b.date) - new Date(a.date));
 
         const updateContent = document.getElementById("update-content");
         updateContent.innerHTML = game.updateNotes
           .map(
             (update) => `
-      <div class="update-section mb-6">
-        <h3 class="text-lg font-semibold mb-1">Version ${update.version} - ${
-              update.title
-            }</h3>
-        <p class="text-sm text-gray-400 mb-2">${update.date}</p>
-        <ul class="list-disc pl-5">
-          ${update.notes.map((note) => `<li>${note}</li>`).join("")}
-        </ul>
-      </div>
-    `
+            <div class="update-section mb-6">
+              <h3 class="text-lg font-semibold mb-1">Version ${
+                update.version
+              } - ${update.title}</h3>
+              <p class="text-sm text-gray-400 mb-2">${update.date}</p>
+              <ul class="list-disc pl-5">
+                ${update.notes.map((note) => `<li>${note}</li>`).join("")}
+              </ul>
+            </div>`
           )
           .join("");
 
@@ -159,56 +152,20 @@
         document.body.classList.add("modal-open"); // Disable body scroll
       }
 
-      // Close modal event listener
-      document.querySelector(".close").addEventListener("click", function () {
+      // Function to close the modal and restore body scroll
+      function closeModal() {
         document.getElementById("updateModal").style.display = "none";
         document.body.classList.remove("modal-open"); // Re-enable body scroll
-      });
+      }
+
+      // Event listener for close button
+      document.querySelector(".close").addEventListener("click", closeModal);
 
       // Close modal when clicking outside the modal content
       window.onclick = function (event) {
         const modal = document.getElementById("updateModal");
         if (event.target === modal) {
-          modal.style.display = "none";
-          document.body.classList.remove("modal-open"); // Re-enable body scroll
-        }
-      };
-
-      // Close modal event listener
-      document.querySelector(".close").addEventListener("click", function () {
-        document.getElementById("updateModal").style.display = "none";
-      });
-
-      // Close modal when clicking outside the modal content
-      window.onclick = function (event) {
-        const modal = document.getElementById("updateModal");
-        if (event.target === modal) {
-          modal.style.display = "none";
-        }
-      };
-
-      // Event listener for closing the modal
-      document.querySelector(".close").addEventListener("click", function () {
-        document.getElementById("updateModal").style.display = "none";
-      });
-
-      // To close the modal when clicking outside of the modal content
-      window.onclick = function (event) {
-        const modal = document.getElementById("updateModal");
-        if (event.target === modal) {
-          modal.style.display = "none";
-        }
-      };
-
-      // Close modal functionality
-      const modal = document.getElementById("updateModal");
-      const span = document.getElementsByClassName("close")[0];
-      span.onclick = function () {
-        modal.style.display = "none";
-      };
-      window.onclick = function (event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
+          closeModal();
         }
       };
 
