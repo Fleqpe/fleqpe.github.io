@@ -25,7 +25,7 @@ const games = [
     updateNotes: [
       {
         version: "1.0",
-        date: "2024-09-21",
+        date: "2024-09-20",
         title: "New Zone Volcano",
         notes: [
           "Added a new zone with 5 new playable levels.",
@@ -35,7 +35,7 @@ const games = [
       },
       {
         version: "1.1",
-        date: "2024-09-23",
+        date: "2024-09-27",
         title: "Cosmetic System And Daily Quests",
         notes: [
           "Introduced a cosmetic item that can be used regardless of zone changes.",
