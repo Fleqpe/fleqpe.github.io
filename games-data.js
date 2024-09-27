@@ -6,6 +6,7 @@ const platformIcons = {
 };
 const games = [
   {
+    id: "7",
     title: "Fantasy Idle Tycoon 2",
     imageUrl: "images/fantasy-idle-tycoon2.png",
     description:
@@ -21,8 +22,30 @@ const games = [
     isPaidApp: false,
     isNew: true,
     isUpdated: true,
+    updateNotes: [
+      {
+        version: "1.0",
+        date: "2024-09-21",
+        title: "New Zone Volcano",
+        notes: [
+          "Added a new zone with 5 new playable levels.",
+          "Improved performance on lower-end devices.",
+          "Reduced the difficulty of higher levels.",
+        ],
+      },
+      {
+        version: "1.1",
+        date: "2024-09-23",
+        title: "Cosmetic System And Daily Quests",
+        notes: [
+          "Introduced a cosmetic item that can be used regardless of zone changes.",
+          "A daily quest has been implemented that rewards players with in-game currency.",
+        ],
+      },
+    ],
   },
   {
+    id: "6",
     title: "Crafters Inc: Tycoon Empire",
     imageUrl: "images/crafters-inc.png",
     description:
@@ -42,6 +65,7 @@ const games = [
     isPaidApp: false,
   },
   {
+    id: "5",
     title: "Miner Madness Tycoon",
     imageUrl: "images/miner-madness.png",
     description:
@@ -58,6 +82,7 @@ const games = [
     isPaidApp: false,
   },
   {
+    id: "4",
     title: "Slicer Cursor Idle",
     imageUrl: "images/slicer-cursor.png",
     description:
@@ -74,6 +99,7 @@ const games = [
     isPaidApp: false,
   },
   {
+    id: "3",
     title: "Fantasy Idle Tycoon",
     imageUrl: "images/fantasy-idle-tycoon.png",
     description:
@@ -90,6 +116,7 @@ const games = [
     isPaidApp: false,
   },
   {
+    id: "2",
     title: "Fishing Society",
     imageUrl: "images/fishing-society.png",
     description:
@@ -103,6 +130,7 @@ const games = [
     isPaidApp: false,
   },
   {
+    id: "1",
     title: "Joe The Necromancer",
     imageUrl: "images/joe-the-necromancer.png",
     description:
@@ -116,6 +144,7 @@ const games = [
     isPaidApp: false,
   },
   {
+    id: "0",
     title: "Antea: Crafting Simulator",
     imageUrl: "images/antea.png",
     description:

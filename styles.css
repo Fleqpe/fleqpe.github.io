@@ -295,10 +295,13 @@ body.light-mode .game-card {
 }
 
 /* Hover effect: Pulse glow and scale-up */
-body.dark-mode .game-card:hover,
+body.dark-mode .game-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 80px rgba(165, 29, 29, 0.8); /* Intense glow on hover */
+}
 body.light-mode .game-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 40px rgba(29, 134, 165, 0.8); /* Intense glow on hover */
+  box-shadow: 0 0 80px rgba(29, 134, 165, 0.8); /* Intense glow on hover */
 }
 
 /* After hover ends (scale-down and fade-out animation) */
@@ -321,4 +324,193 @@ body.light-mode .game-card {
 body.dark-mode .game-card:hover,
 body.light-mode .game-card:hover {
   transition: transform 0.7s ease, box-shadow 0.7s ease, opacity 0.7s ease; /* Enable transitions only after hover */
+} /* Dark Mode Styles */
+body.dark-mode .modal-content {
+  background-color: #1a202c;
+  color: #fff; /* Light text in dark mode */
+  border-color: #444;
+}
+
+body.dark-mode .close {
+  color: #aaa;
+}
+
+body.dark-mode .close:hover {
+  color: #fff;
+}
+
+/* Light Mode Styles */
+body.light-mode .modal-content {
+  background-color: #f9f9f9;
+  color: #333; /* Dark text in light mode */
+  border-color: #ddd;
+}
+
+body.light-mode .close {
+  color: #555;
+}
+
+body.light-mode .close:hover {
+  color: #333;
+}
+
+.close {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Megaphone button styles */
+.update-btn {
+  position: absolute; /* Position it relative to the game card */
+  top: 10px; /* Adjust as needed */
+  left: 10px; /* Adjust as needed */
+  border-radius: 50%; /* Circle shape */
+  padding: 10px; /* Spacing around the icon */
+  display: flex; /* Center the icon */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition */
+  z-index: 10;
+}
+body.light-mode .update-btn {
+  background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
+}
+body.light-mode .update-btn:hover {
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+}
+body.dark-mode .update-btn {
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+}
+body.dark-mode .update-btn:hover {
+  background-color: rgba(255, 255, 255, 0.4); /* Semi-transparent background */
+}
+body.light-mode .megaphone-icon {
+  font-size: 24px; /* Adjust icon size */
+  color: white; /* Icon color */
+}
+body.dark-mode .megaphone-icon {
+  font-size: 24px; /* Adjust icon size */
+  color: black; /* Icon color */
+}
+/* Dark Mode */
+body.dark-mode .modal-content {
+  background-color: #1a202c;
+  color: #fff;
+  border-color: #444;
+}
+
+body.dark-mode .update-section h3 {
+  color: #fff;
+}
+
+/* Light Mode */
+body.light-mode .modal-content {
+  background-color: #f9f9f9;
+  color: #333;
+  border-color: #ddd;
+}
+
+body.light-mode .update-section h3 {
+  color: #333;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 50;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: hidden; /* Prevent entire modal from scrolling */
+}
+
+.modal-content {
+  background-color: #1a202c;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-height: 80%;
+  overflow-y: auto; /* Scrollbar inside modal */
+  border-radius: 8px;
+}
+
+/* Prevent page from scrolling when modal is open */
+/* Scrollbar styling */
+.modal-content::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: #2d3748; /* Background of the scrollbar track (dark) */
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: #4a5568; /* Scrollbar color */
+  border-radius: 10px;
+  border: 2px solid #2d3748; /* Adds padding around the thumb */
+}
+
+/* Hover effect for scrollbar thumb */
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background-color: #718096; /* Lighter color on hover */
+}
+
+/* Dark mode styling */
+body.dark-mode .modal-content::-webkit-scrollbar-track {
+  background: #1a202c; /* Darker track for dark mode */
+}
+
+body.dark-mode .modal-content::-webkit-scrollbar-thumb {
+  background-color: #4a5568; /* Scrollbar thumb in dark mode */
+  border: 2px solid #1a202c;
+}
+
+/* Light mode styling */
+body.light-mode .modal-content {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+body.light-mode .modal-content::-webkit-scrollbar-track {
+  background: #e2e8f0; /* Lighter track for light mode */
+}
+
+body.light-mode .modal-content::-webkit-scrollbar-thumb {
+  background-color: #a0aec0; /* Scrollbar thumb in light mode */
+  border: 2px solid #e2e8f0;
+}
+
+/* Prevent page from scrolling when modal is open */
+body.modal-open {
+  overflow: hidden; /* Disable scrolling for the page */
+}
+
+.update-section {
+  margin-bottom: 20px;
+}
+
+.update-section h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.update-section p {
+  font-size: 0.875rem;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.list-disc {
+  list-style-type: disc;
+}
+
+ul {
+  padding-left: 1.25rem;
 }
