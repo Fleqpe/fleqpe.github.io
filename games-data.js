@@ -20,7 +20,7 @@ const games = [
       { type: "steam", link: "" },
     ],
     isPaidApp: false,
-    isNew: true,
+    isNew: false,
     isUpdated: true,
     updateNotes: [
       {
