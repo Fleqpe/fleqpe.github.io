@@ -19,9 +19,8 @@ const games = [
       },
       { type: "steam", link: "" },
     ],
+    releaseDate: "2024-09-10",
     isPaidApp: false,
-    isNew: false,
-    isUpdated: true,
     updateNotes: [
       {
         version: "1.0",
@@ -40,6 +39,15 @@ const games = [
         notes: [
           "Introduced a cosmetic item that can be used regardless of zone changes.",
           "A daily quest has been implemented that rewards players with in-game currency.",
+        ],
+      },
+      {
+        version: "1.2",
+        date: "2024-10-06",
+        title: "New Zone Frozen Realms",
+        notes: [
+          "Added a new zone with 5 new playable levels.",
+          "Improved performance on lower-end devices.",
         ],
       },
     ],

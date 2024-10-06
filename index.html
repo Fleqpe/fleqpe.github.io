@@ -54,7 +54,6 @@
             generateContent(); // Ensure generateContent is still called
           });
       }
-
       function generateContent() {
         const gameGrid = document.getElementById("game-grid");
 
@@ -62,6 +61,8 @@
           console.error("Game grid not found.");
           return;
         }
+
+        const today = new Date();
 
         games.forEach((game) => {
           const gameCard = document.createElement("div");
@@ -73,43 +74,65 @@
               const iconSrc = platformIcons[url.type];
               if (iconSrc) {
                 buttons += `
-              <a href="${url.link}" target="_blank">
-                <div class="platform-icon-container">
-                  <img src="${iconSrc}" alt="Play on ${url.type}" class="platform-icon">
-                </div>
-              </a>`;
+        <a href="${url.link}" target="_blank">
+          <div class="platform-icon-container">
+            <img src="${iconSrc}" alt="Play on ${url.type}" class="platform-icon">
+          </div>
+        </a>`;
               }
             }
           });
 
+          // Create flairs dynamically based on latest update notes and release date
           let flairs = "";
-          if (game.isNew) {
-            flairs += `<div class="new-flair">New</div>`;
+
+          // Check for the release date to determine if it's "New"
+          if (game.releaseDate) {
+            const releaseDate = new Date(game.releaseDate);
+            const timeSinceRelease = today - releaseDate;
+            const daysSinceRelease = timeSinceRelease / (1000 * 60 * 60 * 24);
+
+            if (daysSinceRelease <= 30) {
+              flairs += `<div class="new-flair">New</div>`;
+            }
           }
-          if (game.isUpdated) {
-            flairs += `<div class="updated-flair">Updated</div>`;
+
+          // Check for the most recent update note
+          if (game.updateNotes && game.updateNotes.length > 0) {
+            const latestUpdate = game.updateNotes.sort(
+              (a, b) => new Date(b.date) - new Date(a.date)
+            )[0];
+            const latestUpdateDate = new Date(latestUpdate.date);
+
+            // Check if the latest update is within the last 30 days
+            const timeDifference = today - latestUpdateDate;
+            const daysDifference = timeDifference / (1000 * 60 * 60 * 24);
+
+            if (daysDifference <= 30) {
+              flairs += `<div class="updated-flair">Updated</div>`;
+            }
           }
 
           let megaphoneButton = "";
           if (game.updateNotes && game.updateNotes.length > 0) {
             megaphoneButton = `
-              <button class="absolute top-2 left-2 p-2 bg-gray-700 rounded-full update-btn" data-game-id="${game.id}">
-                <i class="fas fa-bullhorn megaphone-icon"></i>
-              </button>`;
+        <button class="absolute top-2 left-2 p-2 bg-gray-700 rounded-full update-btn" data-game-id="${game.id}">
+          <i class="fas fa-bullhorn megaphone-icon"></i>
+        </button>`;
           }
 
           gameCard.innerHTML = `
-            ${flairs}
-            ${megaphoneButton}
-            <img src="${game.imageUrl}" alt="${game.title}" class="w-full h-48 object-cover" />
-            <div class="p-5 text-center">
-              <h2 class="text-4xl font-semibold mb-2">${game.title}</h2>
-              <p class="text-base text-gray-400 mb-4">${game.description}</p>
-              <div class="flex justify-center space-x-4">
-                ${buttons}
-              </div>
-            </div>
-          `;
+      ${flairs}
+      ${megaphoneButton}
+      <img src="${game.imageUrl}" alt="${game.title}" class="w-full h-48 object-cover" />
+      <div class="p-5 text-center">
+        <h2 class="text-4xl font-semibold mb-2">${game.title}</h2>
+        <p class="text-base text-gray-400 mb-4">${game.description}</p>
+        <div class="flex justify-center space-x-4">
+          ${buttons}
+        </div>
+      </div>
+    `;
 
           gameGrid.appendChild(gameCard);
         });
