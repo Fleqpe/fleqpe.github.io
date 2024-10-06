@@ -211,33 +211,7 @@ body.dark-mode .game-card {
 .game-card:hover img {
   transform: scale(1.1); /* Slightly zoom in on hover */
 } /* NEW Flair Style */
-/* NEW Flair Style with animation */
-.new-flair {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #ff595e; /* Bright red */
-  color: white;
-  padding: 6px 14px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  border-radius: 12px;
-  box-shadow: 0 0 8px rgba(255, 89, 94, 0.4);
-  letter-spacing: 0.5px;
-  z-index: 10; /* Keep flair on top of all elements */
-  pointer-events: none; /* Prevent interaction with flair */
-  outline: 2px solid white; /* White outline, 2px wide */
-}
-.flair-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px; /* Adjust spacing between flairs */
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 10;
-}
+
 /* Keyframes for pulsing animation */
 @keyframes pulseNew {
   0% {
@@ -252,25 +226,6 @@ body.dark-mode .game-card {
     transform: scale(1);
     box-shadow: 0 0 8px rgba(255, 89, 94, 0.4);
   }
-}
-
-/* UPDATED Flair Style with animation */
-.updated-flair {
-  position: absolute;
-  top: 60px;
-  right: 10px; /* Positioned to the top-left corner */
-  background-color: #00b4d8; /* Bright blue */
-  color: white;
-  padding: 6px 14px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  border-radius: 12px;
-  box-shadow: 0 0 8px rgba(0, 180, 216, 0.4);
-  letter-spacing: 0.5px;
-  z-index: 10; /* Keep flair on top of all elements */
-  pointer-events: none; /* Prevent interaction with flair */
-  outline: 2px solid white; /* White outline, 2px wide */
 }
 @keyframes pulseUpdated {
   0% {
@@ -521,4 +476,60 @@ body.modal-open {
 
 ul {
   padding-left: 1.25rem;
+}
+/* Flair Container */
+.flair-container {
+  display: flex;
+  gap: 8px; /* Space between flairs */
+  margin-bottom: 12px; /* Space below the flair container */
+  z-index: 10;
+}
+/* New Flair Style */
+.new-flair {
+  background-color: #d40000; /* Bright cyan */
+  color: white;
+  padding: 6px 14px; /* Consistent padding */
+  font-size: 0.8rem; /* Consistent font size */
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0, 188, 212, 0.4);
+  letter-spacing: 0.5px;
+  pointer-events: none; /* Prevent interaction with flair */
+  outline: 2px solid white; /* White outline */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 24px; /* Fixed height for consistency */
+  min-width: 80px; /* Set a minimum width */
+}
+
+/* Updated Flair Style */
+.updated-flair {
+  background-color: #00bcd4; /* Bright yellow */
+  color: black;
+  padding: 6px 14px; /* Consistent padding */
+  font-size: 0.8rem; /* Consistent font size */
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(255, 214, 10, 0.4);
+  letter-spacing: 0.5px;
+  pointer-events: none; /* Prevent interaction with flair */
+  outline: 2px solid white; /* White outline */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 24px; /* Fixed height for consistency */
+  min-width: 80px; /* Set a minimum width */
+}
+.new-flair,
+.updated-flair {
+  padding: 0.25rem 0.5rem; /* Adjust as necessary */
+  border-radius: 0.25rem; /* Tailwind rounded */
+  color: white;
+  font-weight: bold;
+  text-align: center; /* Center the text */
+  white-space: nowrap; /* Prevent text wrapping */
+  z-index: 10;
 }

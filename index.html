@@ -74,11 +74,11 @@
               const iconSrc = platformIcons[url.type];
               if (iconSrc) {
                 buttons += `
-        <a href="${url.link}" target="_blank">
-          <div class="platform-icon-container">
-            <img src="${iconSrc}" alt="Play on ${url.type}" class="platform-icon">
-          </div>
-        </a>`;
+          <a href="${url.link}" target="_blank">
+            <div class="platform-icon-container">
+              <img src="${iconSrc}" alt="Play on ${url.type}" class="platform-icon">
+            </div>
+          </a>`;
               }
             }
           });
@@ -92,6 +92,7 @@
             const timeSinceRelease = today - releaseDate;
             const daysSinceRelease = timeSinceRelease / (1000 * 60 * 60 * 24);
 
+            // If the game was released within the last 30 days, mark it as "New"
             if (daysSinceRelease <= 30) {
               flairs += `<div class="new-flair">New</div>`;
             }
@@ -104,13 +105,22 @@
             )[0];
             const latestUpdateDate = new Date(latestUpdate.date);
 
-            // Check if the latest update is within the last 30 days
+            // If the latest update occurred within the last 30 days, mark it as "Updated"
             const timeDifference = today - latestUpdateDate;
             const daysDifference = timeDifference / (1000 * 60 * 60 * 24);
 
             if (daysDifference <= 30) {
               flairs += `<div class="updated-flair">Updated</div>`;
             }
+          }
+
+          // Add the flair container with flairs
+          let flairContainer = "";
+          if (flairs) {
+            flairContainer = `
+    <div class="flair-container flex justify-center space-x-2" style="margin-top: -30px;">
+      ${flairs}
+    </div>`;
           }
 
           let megaphoneButton = "";
@@ -121,10 +131,11 @@
         </button>`;
           }
 
+          // Combine the flair container and other content into the game card
           gameCard.innerHTML = `
-      ${flairs}
       ${megaphoneButton}
       <img src="${game.imageUrl}" alt="${game.title}" class="w-full h-48 object-cover" />
+      ${flairContainer} <!-- Move flairContainer here -->
       <div class="p-5 text-center">
         <h2 class="text-4xl font-semibold mb-2">${game.title}</h2>
         <p class="text-base text-gray-400 mb-4">${game.description}</p>
