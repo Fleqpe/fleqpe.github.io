@@ -6,6 +6,31 @@ const platformIcons = {
 };
 const games = [
   {
+    id: "8",
+    title: "Chest Rush - Idle Clicker",
+    imageUrl: "images/chest-rush.jpg",
+    description:
+      "Chest Rush - Idle Clicker is a fast-paced game where endless treasure awaits! Tap to open chests, earn gold, and unlock powerful upgrades. Whether you're clicking or letting the game run, the gold never stops flowing!",
+    urls: [
+      { type: "poki", link: "" },
+      {
+        type: "crazy",
+        link: "",
+      },
+      { type: "steam", link: "" },
+    ],
+    releaseDate: "2024-10-21",
+    isPaidApp: false,
+    updateNotes: [
+      {
+        version: "1.0",
+        date: "2024-10-21",
+        title: "Game Release",
+        notes: ["Released the game."],
+      },
+    ],
+  },
+  {
     id: "7",
     title: "Fantasy Idle Tycoon 2",
     imageUrl: "images/fantasy-idle-tycoon2.png",
