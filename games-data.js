@@ -12,7 +12,7 @@ const games = [
     description:
       "Chest Rush - Idle Clicker is a fast-paced game where endless treasure awaits! Tap to open chests, earn gold, and unlock powerful upgrades. Whether you're clicking or letting the game run, the gold never stops flowing!",
     urls: [
-      { type: "poki", link: "" },
+      { type: "poki", link: "https://poki.com/tr/g/chest-rush-idle-clicker" },
       {
         type: "crazy",
         link: "",
