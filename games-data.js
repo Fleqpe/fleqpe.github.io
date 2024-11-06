@@ -27,7 +27,16 @@ const games = [
         date: "2024-10-21",
         title: "Game Release",
         notes: ["Released the game."],
-      },
+      },{
+        version: "1.1",
+        date: "2024-11-06",
+        title: "Localization, Theme Manager",
+        notes: [
+          "Added Localization for following languages.(Turkish,English,Spanish,French,German,Italian,Portuguese)",
+          "Game theme will be changed with every new chest.",
+          "Not unlocked chests will be displayed as ???",
+          ]
+  },
     ],
   },
   {
