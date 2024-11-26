@@ -7,12 +7,11 @@ const platformIcons = {
 const games = [
   {
     id: "8",
-    title: "Chest Rush - Idle Clicker",
+    title: "Treasure Blitz - Idle Clicker",
     imageUrl: "images/chest-rush.jpg",
     description:
-      "Chest Rush - Idle Clicker is a fast-paced game where endless treasure awaits! Tap to open chests, earn gold, and unlock powerful upgrades. Whether you're clicking or letting the game run, the gold never stops flowing!",
+      "Treasure Blitz - Idle Clicker is a fast-paced game where endless treasure awaits! Tap to open chests, earn gold, and unlock powerful upgrades. Whether you're clicking or letting the game run, the gold never stops flowing!",
     urls: [
-      { type: "poki", link: "https://poki.com/tr/g/chest-rush-idle-clicker" },
       {
         type: "crazy",
         link: "",
@@ -36,7 +35,15 @@ const games = [
           "Game theme will be changed with every new chest.",
           "Not unlocked chests will be displayed as ???",
           ]
-  },
+  },{
+        version: "1.1",
+        date: "2024-11-13",
+        title: "Portrait Support",
+        notes: [
+          "Added Support for Portrait orientation.",
+          "Background music has changed.",
+          ]
+  }
     ],
   },
   {
