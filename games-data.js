@@ -8,7 +8,7 @@ const games = [
   {
     id: "8",
     title: "Treasure Blitz - Idle Clicker",
-    imageUrl: "images/treasure-blitz.jpg",
+    imageUrl: "images/chest-rush.jpg",
     description:
       "Treasure Blitz - Idle Clicker is a fast-paced game where endless treasure awaits! Tap to open chests, earn gold, and unlock powerful upgrades. Whether you're clicking or letting the game run, the gold never stops flowing!",
     urls: [
