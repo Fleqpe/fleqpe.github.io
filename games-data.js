@@ -5,6 +5,29 @@ const platformIcons = {
   steam: "images/steam-icon.png",
 };
 const games = [
+   {
+    id: "9",
+    title: "AutoRPG Arena",
+    imageUrl: "images/AutoRPG-Arena.png",
+    description:
+      "Welcome to AutoRPG Arena, a turn-based auto-battler RPG where every item, upgrade, and decision shapes the battlefield!\n Battle, train and grow stronger!",
+    urls: [
+      {
+        type: "crazy",
+        link: "https://www.crazygames.com/game/autorpg-arena-fbu",
+      }
+    ],
+    releaseDate: "2025-02-17",
+    isPaidApp: false,
+    updateNotes: [
+      {
+        version: "1.0",
+        date: "2025-02-17",
+        title: "Game Release",
+        notes: ["Released the game."],
+      }
+    ],
+  },
   {
     id: "8",
     title: "Chest Rush - Idle Clicker",
@@ -46,7 +69,6 @@ const games = [
     description:
       "Fantasy Idle Tycoon is an idle game where you must build yourself a blacksmith empire by managing your blacksmiths in this fantasy universe! Expand your empire by managing your investors.",
     urls: [
-      { type: "poki", link: "https://poki.com/tr/g/fantasy-idle-tycoon-2" },
       {
         type: "crazy",
         link: "https://www.crazygames.com/game/fantasy-idle-tycoon-2",
