@@ -5,7 +5,25 @@ const platformIcons = {
   steam: "images/steam-icon.png",
 };
 const games = [
-   {
+  {
+    id: "10",
+    title: "Playomoji",
+    imageUrl: "images/playomoji.png",
+    description:
+      "Playomoji is a chaotic and fun 2D platformer you can play with up to 16 friends. Jump, slide, and take the weirdest paths to move forward, or sabotage your rivals and knock them off course!",
+    urls: [
+      {
+        type: "steam",
+        link: "https://store.steampowered.com/app/3669080/Playomoji",
+      }
+    ],
+    releaseDate: "2025-07-31",
+    isPaidApp: false,
+    updateNotes: [
+     
+    ],
+  },
+  {
     id: "9",
     title: "AutoRPG Arena",
     imageUrl: "images/AutoRPG-Arena.png",
